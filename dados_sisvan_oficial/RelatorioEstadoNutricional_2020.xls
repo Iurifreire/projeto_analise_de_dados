@@ -1,0 +1,826 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+			<head>
+				<!--[if gte mso 9]>
+				<xml>
+					<x:ExcelWorkbook>
+						<x:ExcelWorksheets>
+							<x:ExcelWorksheet>
+								<x:Name>Relatório</x:Name>
+								<x:WorksheetOptions>
+									<x:Print>
+										<x:ValidPrinterInfo/>
+									</x:Print>
+								</x:WorksheetOptions>
+							</x:ExcelWorksheet>
+						</x:ExcelWorksheets>
+					</x:ExcelWorkbook>
+				</xml>
+				<![endif]-->
+			</head><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SISVAN - Relatórios de Produção</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="/sisvan/public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon"  href="https://sisaps.saude.gov.br/sisvan/public/img/favicon.ico" />
+    <link href="/sisvan/public/css/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/alteraTemplate.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/skins/skin-green.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/jquery.steps.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/sisvan/public/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/sisvan/public/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/sisvan/public/css/loading-bar.css" media="all" />
+
+    <!--iCHECK CSS-->
+    <link href="/sisvan/public/csscss/icheck/minimal/green.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/sisvan/public/js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/sisvan/public/js/jquery.mask.js"></script>
+    <script src="/sisvan/public/js/angular/angular.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style>
+        [ng\: cloak
+
+        ]
+        ,
+        [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-green layout-top-nav">
+<div class="wrapper">
+    <header class="main-header">
+        <nav class="navbar navbar-static-top" >
+            <!--            <div class="container">-->
+            <!--a class="navbar-brand"><b>SISVAN</b> Relatórios</a-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" onclick="javascrit:window.close()">
+                <i class="fa fa-close"></i>
+            </button>
+            <!--            </div>-->
+        </nav>
+    </header>
+<section class="content-wrapper">
+    <div class="content-header">
+        <h1>
+            Relat&oacute;rios P&uacute;blicos
+        </h1>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-success">
+                                        <div class="box-body">
+                        <strong>Relat&oacute;rios do Estado nutricional dos indiv&iacute;duos acompanhados por per&iacute;odo, fase do ciclo da vida e &iacute;ndice</strong><br />
+                        <strong>Ano:</strong>  2020 - <strong>M&ecirc;s:</strong> TODOS<br />
+                        <strong>Fase da Vida:</strong> ADULTO<br />                         <strong>Sexo:</strong> TODOS<br />                                                                                                                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-default">
+                                        <div class="box-body" align="center">
+                    
+                        <table style="text-align: center" class="table table-striped table-bordered display table-responsive" border="1px" id="relatorio">
+                            <thead>
+                            <tr>
+                                <th colspan="18" style="font-size: medium; color:#7e7e7e; text-align: center" >IMC</th>
+                            </tr>
+                            
+                                <th rowspan="2" width="5%">Regi&atilde;o</th>
+                                <th rowspan="2" width="2%">C&oacute;digo UF</th>
+                                <th rowspan="2" width="2%">UF</th>
+                                
+                                <th colspan="2" width="7%" style="text-align: center">Baixo peso</th>
+                                <th colspan="2" width="7%" style="text-align: center">Adequado<br>ou Eutr&oacute;fico</th>
+                                <th colspan="2" width="7%" style="text-align: center">Sobrepeso</th>
+                                <th colspan="2" width="7%" style="text-align: center">Obesidade Grau I</th>                      
+                                <th colspan="2" width="7%" style="text-align: center">Obesidade Grau II</th>                
+                                <th colspan="2" width="7%" style="text-align: center">Obesidade Grau III</th>
+                                <th rowspan="2" width="5%" style="text-align: center">Total</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>  
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>  
+                                <th style="text-align: center" width="5%">Quantidade</th>
+                                <th style="text-align: center" width="2%">%</th>  
+                            </tr>
+                                
+                            </thead>
+                            <tbody>
+
+                                                                                <tr>
+                                                                                                                    <td style="text-align: left">CENTRO-OESTE</td>
+                                                            <td style="text-align: left">53</td>
+                                                            <td style="text-align: left" colspan="1">DF</td>
+                                                                                                                    <td>1.214</td>
+                                                        <td>1.9%</td>
+                                                        <td>17.822</td>
+                                                        <td>27.85%</td>
+                                                        <td>22.197</td>
+                                                        <td>34.69%</td>
+                                                                                                                    <td>14.056</td>
+                                                            <td>21.97%</td>
+                                                                                                                                                                            <td>5.770</td>
+                                                            <td>9.02%</td>
+                                                                                                                                                                            <td>2.926</td>
+                                                            <td>4.57%</td>
+                                                                                                                <td>63.985</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">CENTRO-OESTE</td>
+                                                            <td style="text-align: left">52</td>
+                                                            <td style="text-align: left" colspan="1">GO</td>
+                                                                                                                    <td>5.649</td>
+                                                        <td>2.17%</td>
+                                                        <td>83.382</td>
+                                                        <td>32.02%</td>
+                                                        <td>89.114</td>
+                                                        <td>34.22%</td>
+                                                                                                                    <td>51.389</td>
+                                                            <td>19.74%</td>
+                                                                                                                                                                            <td>20.442</td>
+                                                            <td>7.85%</td>
+                                                                                                                                                                            <td>10.403</td>
+                                                            <td>4%</td>
+                                                                                                                <td>260.379</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">CENTRO-OESTE</td>
+                                                            <td style="text-align: left">50</td>
+                                                            <td style="text-align: left" colspan="1">MS</td>
+                                                                                                                    <td>2.522</td>
+                                                        <td>1.88%</td>
+                                                        <td>36.346</td>
+                                                        <td>27.03%</td>
+                                                        <td>44.130</td>
+                                                        <td>32.81%</td>
+                                                                                                                    <td>30.417</td>
+                                                            <td>22.62%</td>
+                                                                                                                                                                            <td>13.719</td>
+                                                            <td>10.2%</td>
+                                                                                                                                                                            <td>7.356</td>
+                                                            <td>5.47%</td>
+                                                                                                                <td>134.490</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">CENTRO-OESTE</td>
+                                                            <td style="text-align: left">51</td>
+                                                            <td style="text-align: left" colspan="1">MT</td>
+                                                                                                                    <td>3.744</td>
+                                                        <td>1.88%</td>
+                                                        <td>60.140</td>
+                                                        <td>30.19%</td>
+                                                        <td>68.227</td>
+                                                        <td>34.25%</td>
+                                                                                                                    <td>41.876</td>
+                                                            <td>21.02%</td>
+                                                                                                                                                                            <td>16.925</td>
+                                                            <td>8.5%</td>
+                                                                                                                                                                            <td>8.301</td>
+                                                            <td>4.17%</td>
+                                                                                                                <td>199.213</td>
+                                                    </tr>
+                                                                                            <tr style="border: 2px solid #AAAAAA!important; font-weight: bold">
+                                            <!--<td style="text-align: left">5</td>-->
+                                            <td style="text-align: left" colspan="3">
+                                                TOTAL REGI&Atilde;O CENTRO-OESTE                                            </td>
+                                            <td>13.129</td>
+                                            <td>2%</td>
+                                            <td>197.690</td>
+                                            <td>30.04%</td>
+                                            <td>223.668</td>
+                                            <td>33.99%</td>
+                                                                                            <td>137.738</td>
+                                                <td>20.93%</td>
+                                                                                                                                        <td>56.856</td>
+                                                <td>8.64%</td>
+                                                                                                                                        <td>28.986</td>
+                                                <td>4.4%</td>
+                                                                                        <td>658.067</td>
+                                        </tr>
+                                                                                            <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">27</td>
+                                                            <td style="text-align: left" colspan="1">AL</td>
+                                                                                                                    <td>5.242</td>
+                                                        <td>2.34%</td>
+                                                        <td>70.941</td>
+                                                        <td>31.64%</td>
+                                                        <td>78.474</td>
+                                                        <td>35%</td>
+                                                                                                                    <td>45.700</td>
+                                                            <td>20.38%</td>
+                                                                                                                                                                            <td>16.693</td>
+                                                            <td>7.45%</td>
+                                                                                                                                                                            <td>7.147</td>
+                                                            <td>3.19%</td>
+                                                                                                                <td>224.197</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">29</td>
+                                                            <td style="text-align: left" colspan="1">BA</td>
+                                                                                                                    <td>21.894</td>
+                                                        <td>2.68%</td>
+                                                        <td>294.973</td>
+                                                        <td>36.12%</td>
+                                                        <td>288.134</td>
+                                                        <td>35.28%</td>
+                                                                                                                    <td>145.192</td>
+                                                            <td>17.78%</td>
+                                                                                                                                                                            <td>47.737</td>
+                                                            <td>5.85%</td>
+                                                                                                                                                                            <td>18.727</td>
+                                                            <td>2.29%</td>
+                                                                                                                <td>816.657</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">23</td>
+                                                            <td style="text-align: left" colspan="1">CE</td>
+                                                                                                                    <td>11.464</td>
+                                                        <td>1.86%</td>
+                                                        <td>176.733</td>
+                                                        <td>28.64%</td>
+                                                        <td>226.866</td>
+                                                        <td>36.77%</td>
+                                                                                                                    <td>134.226</td>
+                                                            <td>21.75%</td>
+                                                                                                                                                                            <td>48.178</td>
+                                                            <td>7.81%</td>
+                                                                                                                                                                            <td>19.562</td>
+                                                            <td>3.17%</td>
+                                                                                                                <td>617.029</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">21</td>
+                                                            <td style="text-align: left" colspan="1">MA</td>
+                                                                                                                    <td>16.355</td>
+                                                        <td>2.73%</td>
+                                                        <td>244.018</td>
+                                                        <td>40.74%</td>
+                                                        <td>216.732</td>
+                                                        <td>36.19%</td>
+                                                                                                                    <td>89.244</td>
+                                                            <td>14.9%</td>
+                                                                                                                                                                            <td>24.781</td>
+                                                            <td>4.14%</td>
+                                                                                                                                                                            <td>7.787</td>
+                                                            <td>1.3%</td>
+                                                                                                                <td>598.917</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">25</td>
+                                                            <td style="text-align: left" colspan="1">PB</td>
+                                                                                                                    <td>5.283</td>
+                                                        <td>2.11%</td>
+                                                        <td>80.871</td>
+                                                        <td>32.24%</td>
+                                                        <td>90.561</td>
+                                                        <td>36.1%</td>
+                                                                                                                    <td>49.944</td>
+                                                            <td>19.91%</td>
+                                                                                                                                                                            <td>17.409</td>
+                                                            <td>6.94%</td>
+                                                                                                                                                                            <td>6.808</td>
+                                                            <td>2.71%</td>
+                                                                                                                <td>250.876</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">26</td>
+                                                            <td style="text-align: left" colspan="1">PE</td>
+                                                                                                                    <td>10.379</td>
+                                                        <td>2.19%</td>
+                                                        <td>160.940</td>
+                                                        <td>33.99%</td>
+                                                        <td>168.309</td>
+                                                        <td>35.54%</td>
+                                                                                                                    <td>88.938</td>
+                                                            <td>18.78%</td>
+                                                                                                                                                                            <td>31.700</td>
+                                                            <td>6.69%</td>
+                                                                                                                                                                            <td>13.280</td>
+                                                            <td>2.8%</td>
+                                                                                                                <td>473.546</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">22</td>
+                                                            <td style="text-align: left" colspan="1">PI</td>
+                                                                                                                    <td>5.294</td>
+                                                        <td>2.49%</td>
+                                                        <td>74.624</td>
+                                                        <td>35.08%</td>
+                                                        <td>77.613</td>
+                                                        <td>36.49%</td>
+                                                                                                                    <td>38.728</td>
+                                                            <td>18.21%</td>
+                                                                                                                                                                            <td>12.231</td>
+                                                            <td>5.75%</td>
+                                                                                                                                                                            <td>4.210</td>
+                                                            <td>1.98%</td>
+                                                                                                                <td>212.700</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">24</td>
+                                                            <td style="text-align: left" colspan="1">RN</td>
+                                                                                                                    <td>3.246</td>
+                                                        <td>1.92%</td>
+                                                        <td>47.014</td>
+                                                        <td>27.83%</td>
+                                                        <td>60.106</td>
+                                                        <td>35.57%</td>
+                                                                                                                    <td>37.627</td>
+                                                            <td>22.27%</td>
+                                                                                                                                                                            <td>14.518</td>
+                                                            <td>8.59%</td>
+                                                                                                                                                                            <td>6.451</td>
+                                                            <td>3.82%</td>
+                                                                                                                <td>168.962</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORDESTE</td>
+                                                            <td style="text-align: left">28</td>
+                                                            <td style="text-align: left" colspan="1">SE</td>
+                                                                                                                    <td>2.752</td>
+                                                        <td>2.39%</td>
+                                                        <td>37.904</td>
+                                                        <td>32.9%</td>
+                                                        <td>40.012</td>
+                                                        <td>34.73%</td>
+                                                                                                                    <td>22.601</td>
+                                                            <td>19.62%</td>
+                                                                                                                                                                            <td>8.266</td>
+                                                            <td>7.17%</td>
+                                                                                                                                                                            <td>3.683</td>
+                                                            <td>3.2%</td>
+                                                                                                                <td>115.218</td>
+                                                    </tr>
+                                                                                            <tr style="border: 2px solid #AAAAAA!important; font-weight: bold">
+                                            <!--<td style="text-align: left">2</td>-->
+                                            <td style="text-align: left" colspan="3">
+                                                TOTAL REGI&Atilde;O NORDESTE                                            </td>
+                                            <td>81.909</td>
+                                            <td>2.35%</td>
+                                            <td>1.188.018</td>
+                                            <td>34.16%</td>
+                                            <td>1.246.807</td>
+                                            <td>35.85%</td>
+                                                                                            <td>652.200</td>
+                                                <td>18.75%</td>
+                                                                                                                                        <td>221.513</td>
+                                                <td>6.37%</td>
+                                                                                                                                        <td>87.655</td>
+                                                <td>2.52%</td>
+                                                                                        <td>3.478.102</td>
+                                        </tr>
+                                                                                            <tr>
+                                                                                                                    <td style="text-align: left">NORTE</td>
+                                                            <td style="text-align: left">12</td>
+                                                            <td style="text-align: left" colspan="1">AC</td>
+                                                                                                                    <td>1.018</td>
+                                                        <td>2.06%</td>
+                                                        <td>17.704</td>
+                                                        <td>35.79%</td>
+                                                        <td>17.906</td>
+                                                        <td>36.19%</td>
+                                                                                                                    <td>8.852</td>
+                                                            <td>17.89%</td>
+                                                                                                                                                                            <td>2.912</td>
+                                                            <td>5.89%</td>
+                                                                                                                                                                            <td>1.081</td>
+                                                            <td>2.19%</td>
+                                                                                                                <td>49.473</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORTE</td>
+                                                            <td style="text-align: left">13</td>
+                                                            <td style="text-align: left" colspan="1">AM</td>
+                                                                                                                    <td>9.077</td>
+                                                        <td>1.85%</td>
+                                                        <td>150.185</td>
+                                                        <td>30.63%</td>
+                                                        <td>183.140</td>
+                                                        <td>37.35%</td>
+                                                                                                                    <td>101.435</td>
+                                                            <td>20.69%</td>
+                                                                                                                                                                            <td>33.485</td>
+                                                            <td>6.83%</td>
+                                                                                                                                                                            <td>12.984</td>
+                                                            <td>2.65%</td>
+                                                                                                                <td>490.306</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORTE</td>
+                                                            <td style="text-align: left">16</td>
+                                                            <td style="text-align: left" colspan="1">AP</td>
+                                                                                                                    <td>679</td>
+                                                        <td>1.81%</td>
+                                                        <td>11.438</td>
+                                                        <td>30.43%</td>
+                                                        <td>14.471</td>
+                                                        <td>38.5%</td>
+                                                                                                                    <td>7.504</td>
+                                                            <td>19.97%</td>
+                                                                                                                                                                            <td>2.539</td>
+                                                            <td>6.76%</td>
+                                                                                                                                                                            <td>952</td>
+                                                            <td>2.53%</td>
+                                                                                                                <td>37.583</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORTE</td>
+                                                            <td style="text-align: left">15</td>
+                                                            <td style="text-align: left" colspan="1">PA</td>
+                                                                                                                    <td>14.655</td>
+                                                        <td>2.22%</td>
+                                                        <td>235.827</td>
+                                                        <td>35.75%</td>
+                                                        <td>247.464</td>
+                                                        <td>37.52%</td>
+                                                                                                                    <td>115.005</td>
+                                                            <td>17.44%</td>
+                                                                                                                                                                            <td>34.512</td>
+                                                            <td>5.23%</td>
+                                                                                                                                                                            <td>12.102</td>
+                                                            <td>1.83%</td>
+                                                                                                                <td>659.565</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORTE</td>
+                                                            <td style="text-align: left">11</td>
+                                                            <td style="text-align: left" colspan="1">RO</td>
+                                                                                                                    <td>1.878</td>
+                                                        <td>2.36%</td>
+                                                        <td>26.466</td>
+                                                        <td>33.2%</td>
+                                                        <td>27.717</td>
+                                                        <td>34.77%</td>
+                                                                                                                    <td>15.382</td>
+                                                            <td>19.3%</td>
+                                                                                                                                                                            <td>5.676</td>
+                                                            <td>7.12%</td>
+                                                                                                                                                                            <td>2.597</td>
+                                                            <td>3.26%</td>
+                                                                                                                <td>79.716</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORTE</td>
+                                                            <td style="text-align: left">14</td>
+                                                            <td style="text-align: left" colspan="1">RR</td>
+                                                                                                                    <td>790</td>
+                                                        <td>1.65%</td>
+                                                        <td>14.093</td>
+                                                        <td>29.38%</td>
+                                                        <td>18.140</td>
+                                                        <td>37.81%</td>
+                                                                                                                    <td>10.202</td>
+                                                            <td>21.27%</td>
+                                                                                                                                                                            <td>3.343</td>
+                                                            <td>6.97%</td>
+                                                                                                                                                                            <td>1.406</td>
+                                                            <td>2.93%</td>
+                                                                                                                <td>47.974</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">NORTE</td>
+                                                            <td style="text-align: left">17</td>
+                                                            <td style="text-align: left" colspan="1">TO</td>
+                                                                                                                    <td>2.237</td>
+                                                        <td>2.21%</td>
+                                                        <td>34.910</td>
+                                                        <td>34.55%</td>
+                                                        <td>35.501</td>
+                                                        <td>35.14%</td>
+                                                                                                                    <td>18.818</td>
+                                                            <td>18.63%</td>
+                                                                                                                                                                            <td>6.716</td>
+                                                            <td>6.65%</td>
+                                                                                                                                                                            <td>2.853</td>
+                                                            <td>2.82%</td>
+                                                                                                                <td>101.035</td>
+                                                    </tr>
+                                                                                            <tr style="border: 2px solid #AAAAAA!important; font-weight: bold">
+                                            <!--<td style="text-align: left">1</td>-->
+                                            <td style="text-align: left" colspan="3">
+                                                TOTAL REGI&Atilde;O NORTE                                            </td>
+                                            <td>30.334</td>
+                                            <td>2.07%</td>
+                                            <td>490.623</td>
+                                            <td>33.47%</td>
+                                            <td>544.339</td>
+                                            <td>37.14%</td>
+                                                                                            <td>277.198</td>
+                                                <td>18.91%</td>
+                                                                                                                                        <td>89.183</td>
+                                                <td>6.08%</td>
+                                                                                                                                        <td>33.975</td>
+                                                <td>2.32%</td>
+                                                                                        <td>1.465.652</td>
+                                        </tr>
+                                                                                            <tr>
+                                                                                                                    <td style="text-align: left">SUDESTE</td>
+                                                            <td style="text-align: left">32</td>
+                                                            <td style="text-align: left" colspan="1">ES</td>
+                                                                                                                    <td>2.411</td>
+                                                        <td>2.15%</td>
+                                                        <td>33.085</td>
+                                                        <td>29.56%</td>
+                                                        <td>36.607</td>
+                                                        <td>32.7%</td>
+                                                                                                                    <td>24.064</td>
+                                                            <td>21.5%</td>
+                                                                                                                                                                            <td>10.146</td>
+                                                            <td>9.06%</td>
+                                                                                                                                                                            <td>5.621</td>
+                                                            <td>5.02%</td>
+                                                                                                                <td>111.934</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">SUDESTE</td>
+                                                            <td style="text-align: left">31</td>
+                                                            <td style="text-align: left" colspan="1">MG</td>
+                                                                                                                    <td>38.170</td>
+                                                        <td>2.28%</td>
+                                                        <td>559.198</td>
+                                                        <td>33.34%</td>
+                                                        <td>566.686</td>
+                                                        <td>33.78%</td>
+                                                                                                                    <td>316.673</td>
+                                                            <td>18.88%</td>
+                                                                                                                                                                            <td>125.127</td>
+                                                            <td>7.46%</td>
+                                                                                                                                                                            <td>71.549</td>
+                                                            <td>4.27%</td>
+                                                                                                                <td>1.677.403</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">SUDESTE</td>
+                                                            <td style="text-align: left">33</td>
+                                                            <td style="text-align: left" colspan="1">RJ</td>
+                                                                                                                    <td>9.765</td>
+                                                        <td>2.06%</td>
+                                                        <td>134.682</td>
+                                                        <td>28.41%</td>
+                                                        <td>156.018</td>
+                                                        <td>32.92%</td>
+                                                                                                                    <td>98.871</td>
+                                                            <td>20.86%</td>
+                                                                                                                                                                            <td>45.897</td>
+                                                            <td>9.68%</td>
+                                                                                                                                                                            <td>28.754</td>
+                                                            <td>6.07%</td>
+                                                                                                                <td>473.987</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">SUDESTE</td>
+                                                            <td style="text-align: left">35</td>
+                                                            <td style="text-align: left" colspan="1">SP</td>
+                                                                                                                    <td>20.297</td>
+                                                        <td>1.69%</td>
+                                                        <td>304.559</td>
+                                                        <td>25.42%</td>
+                                                        <td>397.176</td>
+                                                        <td>33.15%</td>
+                                                                                                                    <td>275.733</td>
+                                                            <td>23.01%</td>
+                                                                                                                                                                            <td>125.882</td>
+                                                            <td>10.51%</td>
+                                                                                                                                                                            <td>74.613</td>
+                                                            <td>6.23%</td>
+                                                                                                                <td>1.198.260</td>
+                                                    </tr>
+                                                                                            <tr style="border: 2px solid #AAAAAA!important; font-weight: bold">
+                                            <!--<td style="text-align: left">3</td>-->
+                                            <td style="text-align: left" colspan="3">
+                                                TOTAL REGI&Atilde;O SUDESTE                                            </td>
+                                            <td>70.643</td>
+                                            <td>2.04%</td>
+                                            <td>1.031.524</td>
+                                            <td>29.8%</td>
+                                            <td>1.156.487</td>
+                                            <td>33.41%</td>
+                                                                                            <td>715.341</td>
+                                                <td>20.67%</td>
+                                                                                                                                        <td>307.052</td>
+                                                <td>8.87%</td>
+                                                                                                                                        <td>180.537</td>
+                                                <td>5.22%</td>
+                                                                                        <td>3.461.584</td>
+                                        </tr>
+                                                                                            <tr>
+                                                                                                                    <td style="text-align: left">SUL</td>
+                                                            <td style="text-align: left">41</td>
+                                                            <td style="text-align: left" colspan="1">PR</td>
+                                                                                                                    <td>11.890</td>
+                                                        <td>1.77%</td>
+                                                        <td>190.244</td>
+                                                        <td>28.36%</td>
+                                                        <td>229.687</td>
+                                                        <td>34.25%</td>
+                                                                                                                    <td>147.841</td>
+                                                            <td>22.04%</td>
+                                                                                                                                                                            <td>61.108</td>
+                                                            <td>9.11%</td>
+                                                                                                                                                                            <td>29.932</td>
+                                                            <td>4.46%</td>
+                                                                                                                <td>670.702</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">SUL</td>
+                                                            <td style="text-align: left">43</td>
+                                                            <td style="text-align: left" colspan="1">RS</td>
+                                                                                                                    <td>4.014</td>
+                                                        <td>1.23%</td>
+                                                        <td>78.997</td>
+                                                        <td>24.22%</td>
+                                                        <td>106.428</td>
+                                                        <td>32.63%</td>
+                                                                                                                    <td>77.030</td>
+                                                            <td>23.61%</td>
+                                                                                                                                                                            <td>36.293</td>
+                                                            <td>11.13%</td>
+                                                                                                                                                                            <td>23.437</td>
+                                                            <td>7.18%</td>
+                                                                                                                <td>326.199</td>
+                                                    </tr>
+                                                                                                        <tr>
+                                                                                                                    <td style="text-align: left">SUL</td>
+                                                            <td style="text-align: left">42</td>
+                                                            <td style="text-align: left" colspan="1">SC</td>
+                                                                                                                    <td>8.513</td>
+                                                        <td>1.45%</td>
+                                                        <td>172.010</td>
+                                                        <td>29.22%</td>
+                                                        <td>205.274</td>
+                                                        <td>34.87%</td>
+                                                                                                                    <td>125.822</td>
+                                                            <td>21.38%</td>
+                                                                                                                                                                            <td>50.929</td>
+                                                            <td>8.65%</td>
+                                                                                                                                                                            <td>26.083</td>
+                                                            <td>4.43%</td>
+                                                                                                                <td>588.631</td>
+                                                    </tr>
+                                                                                            <tr style="border: 2px solid #AAAAAA!important; font-weight: bold">
+                                            <!--<td style="text-align: left">4</td>-->
+                                            <td style="text-align: left" colspan="3">
+                                                TOTAL REGI&Atilde;O SUL                                            </td>
+                                            <td>24.417</td>
+                                            <td>1.54%</td>
+                                            <td>441.251</td>
+                                            <td>27.83%</td>
+                                            <td>541.389</td>
+                                            <td>34.15%</td>
+                                                                                            <td>350.693</td>
+                                                <td>22.12%</td>
+                                                                                                                                        <td>148.330</td>
+                                                <td>9.36%</td>
+                                                                                                                                        <td>79.452</td>
+                                                <td>5.01%</td>
+                                                                                        <td>1.585.532</td>
+                                        </tr>
+                                                                        <tr style="border:2px solid #AAAAAA !important; font-weight: bold">
+                                    <td style="text-align: left" colspan="3">
+                                        TOTAL BRASIL
+                                    </td>
+                                    <td>220.432</td>
+                                    <td>2.07%</td>
+                                    <td>3.349.106</td>
+                                    <td>31.45%</td>
+                                    <td>3.712.690</td>
+                                    <td>34.86%</td>
+                                                                            <td>2.133.170</td>
+                                        <td>20.03%</td>
+                                                                                                                <td>822.934</td>
+                                        <td>7.73%</td>
+                                                                                                                <td>410.605</td>
+                                        <td>3.86%</td>
+                                                                        <td>10.648.937</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <br />
+                                            </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div><!-- ./wrapper -->
+<!--######################RODAPE#####################->
+<!-- Main Footer -->
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        Versão 3.2
+    </div>
+    <!-- Default to the left -->
+    <strong>Ministério da Saúde &copy; 2026. <a href="http://aps.saude.gov.br/" target="_blank">Secretaria de Atenção Primária à Saúde</a></strong>
+</footer>
+
+
+<!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
+<div class='control-sidebar-bg'></div>
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- Bootstrap 3.3.2 JS -->
+<script src="/sisvan/public/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Bootbox -->
+<script src="/sisvan/public/js/bootbox.min.js" type="text/javascript"></script>
+<!-- AdminLTE App -->
+<script src="/sisvan/public/js/app.min.js" type="text/javascript"></script>
+<!-- Datatables -->
+<script src="/sisvan/public/js/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/sisvan/public/js/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<!-- highcharts GRÁFICOS -->
+<script src="/sisvan/public/js/highcharts/highcharts.js" type="text/javascript"></script>
+<script src="/sisvan/public/js/highcharts/modules/exporting.js" type="text/javascript"></script>
+
+<!-- SELECTS  -->
+<script src="/sisvan/public/js/bootstrap-select.js"></script>
+
+
+
+<script type="text/javascript">
+    var table = $('.dtPagina')
+        .dataTable(
+            {
+                "oLanguage": {
+                    "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                    "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
+                    "sInfoEmtpy": "Exibindo 0 a 0 de 0 registros",
+                    "sInfo": "Exibindo de _START_ a _END_ de _TOTAL_ registros",
+                    "sInfoFiltered": "",
+                    "sSearch": "Procurar: ",
+                    "oPaginate": {
+                        "sFirst": "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext": "Próximo",
+                        "sLast": "Último"
+                    }
+                },
+
+                "sScrollX": '99%',
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50]],
+                "ordering": false
+            });
+
+
+    var table = $('.dtAgrupador')
+        .dataTable(
+            {
+                "oLanguage": {
+                    "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                    "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
+                    "sInfoEmtpy": "Exibindo 0 a 0 de 0 registros",
+                    "sInfo": "Exibindo de _START_ a _END_ de _TOTAL_ registros",
+                    "sInfoFiltered": "",
+                    "sSearch": "Procurar: ",
+                    "oPaginate": {
+                        "sFirst": "Primeiro",
+                        "sPrevious": "Anterior",
+                        "sNext": "Próximo",
+                        "sLast": "Último"
+                    }
+                },
+
+                "sScrollX": '99%',
+                "lengthMenu": [[51], []],
+                "ordering": false
+            });
+</script>
+
+
+</body>
+</html>
